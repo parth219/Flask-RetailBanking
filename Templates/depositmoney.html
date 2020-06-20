@@ -1,0 +1,72 @@
+{% include 'headertemplate.html' %}
+<div class="main">
+  
+    <style>
+      body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+        table, tr{
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            padding:4px;
+            font-size:13px;
+        }
+        td{
+            padding:4px;
+            font-size:13px;
+        }
+        input{
+            padding:4px;
+            width: auto;
+            height: auto;
+        }
+        input[type = 'submit'] {
+            display: block;
+            margin: 0 auto;
+            font-size:13px;
+            font-weight: bold;
+        }
+        select{
+            font-size:13px;
+            width: 300px;
+            height: 40px;
+        }
+        label{
+            font-weight: bold;
+        }
+    </style>
+    
+    <h3><center>Depsoit Amount</center></h3>
+    <p><center style="color:green">{{mes}}</center></p>
+    <br>
+    <form method="POST" action=''>
+        <table>
+            <tr>
+                <td><label for="custid">Customer Id:</label>
+                <td><input type="text" name="custid" readonly  value={{result[0][0]}}></td>
+            </tr>
+            <tr>
+                <td><label for="actid">Account Id:</label>
+                <td><input type="text" readonly  name="actid" value={{result[0][1]}}></td>
+            </tr>
+            <tr>
+                <td><label for="acttype">Account type:</label>
+                <td><input type="text" readonly  name="acttype" value={{result[0][2]}}></td>
+            </tr>
+            <tr>
+                <td><label for="bal">Balance:</label>
+                <td><input type="text" name="bal" readonly value={{result[0][3]}}></td>
+            </tr>
+            <tr>
+                <td><label for="with_amt">Depsoit:</label>
+                <td><input type="number" name="with_amt"  placeholder="Enter amount:" required/></td>
+            </tr>
+            </table>
+        <br>
+        <input type="submit" value="Depsoit">
+    </form>
+    </div>
+
+{% include 'footertemplate.html' %}

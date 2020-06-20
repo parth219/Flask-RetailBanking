@@ -1,1 +1,15 @@
-
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <form class="form" method="POST">
+  <h2>LOGIN</h2>
+  <p type="User Name:"><input type="text" name="uname" placeholder="Enter user name:"></input></p>
+  <p type="Password:"><input type="password" name="pass" placeholder="Enter password:"></input></p>
+  <button>Login</button>
+  <p style="color: red; font-size: smaller;">{{err}}</p>
+  </form>
+  {{err}}
+</body>
+</html>

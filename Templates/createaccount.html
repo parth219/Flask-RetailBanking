@@ -1,0 +1,71 @@
+{% include 'headertemplate.html' %}
+<style>
+    body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+    table, tr{
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        padding:4px;
+        font-size:10px;
+    }
+    td{
+        padding:4px;
+        font-size:10px;
+    }
+    input{
+        padding:4px;
+        width: 300px;
+        height: 40px;
+    }
+    input[type = 'submit'] {
+        display: block;
+        margin: 0 auto;
+        font-size:12px;
+        font-weight: bold;
+    }
+    select{
+        font-size:12px;
+        width: 300px;
+        height: 40px;
+    }
+    label{
+        font-weight: bold;
+    }
+</style>
+<div class="main">
+  <center>
+      <h3>Create Account</h3>
+      <p style="color: green;">{{mes}}</p>
+    <form method="POST" action=''>
+        <table>
+            <tr>
+                <td><label for="custid"> Enter Customer ID:</label>
+                <td><input type="text" name="custid" pattern="[0-9]{9}" placeholder=" Customer ID" required/></td>
+            </tr>
+            <tr>
+              <td><label for="actid">Account ID:</label>
+              <td><input type="text" name="actid" value="{{new_actid}}"/></td>
+          </tr>  
+           <tr>
+                <td><label for="src_type">Account Type:</label></td>
+                <td>
+                    <select name="acctype">
+                        <option value="savings">Savings</option>
+                        <option value="current">Current</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tr_amt">Deposit Amount:</label></td>
+                <td><input type="number" name="tr_amt" required/></td>
+            </tr>    
+            </table>
+        <br>
+        <input type="submit" value="Create Account">
+    </form>
+  </center>
+</div>
+{% include 'footertemplate.html' %}

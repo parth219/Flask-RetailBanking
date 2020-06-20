@@ -1,0 +1,75 @@
+{% include 'headertemplate.html' %}
+<div class="main">
+  
+<style>
+    body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+    table, tr{
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        padding: 5px;
+        font-size:13px;
+    }
+    td{
+        padding:5px;
+        font-size:13px;
+    }
+    input{
+        padding:5px;
+        width:auto;
+        height:auto;
+    }
+    input[type = 'submit'] {
+        display: block;
+        margin: 0 auto;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    select{
+        font-size:13px;
+        width:auto;
+        height:auto;
+    }
+    label{
+        font-weight: bold;
+    }
+</style>
+<title>Delete Customer</title>
+<h3><center>Delete Customer</center></h3>
+<center>
+{% if flag==1 %}
+    <p style="color: green;">{{mes}}</p>
+{% endif %}
+{% if flag==0 %}
+    <p style="color: red;">{{mes}}</p>
+{% endif %}
+</center>
+<br>
+<form method="POST" action="">
+    <table>
+        <tr>
+            <td><label for="ssnid">Customer SSN ID:</label>
+            <td><input type="text" name="ssnid" pattern="[0-9]{9}" placeholder="Enter 9 digit SSN ID" required/></td>
+        </tr>
+        <tr>
+            <td><label for="custid">Customer ID:</label>
+            <td><input type="text" name="custid" pattern="[0-9]{9}" placeholder="Enter 9 digit Customer ID" required/></td>
+        </tr>
+        <tr>
+            <td><label for="name">Customer Name:</label>
+            <td><input type="text" name="customername" placeholder="Enter Customer Name" required/></td>
+        </tr>
+        <tr>
+            <td><label for="age">Customer Age:</label>
+            <td><input type="text" name="age" placeholder="Enter age:" required/></td>
+        </tr>   
+        </table>
+    <br>
+    <br>
+    <input type="submit" value="DELETE">
+</form>
+</div>
+{% include 'footertemplate.html' %}

@@ -1,0 +1,82 @@
+{% include 'headertemplate.html' %}
+<div class="main">
+  
+<style>
+    body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+  table, tr{
+      margin-left: auto;
+      margin-right: auto;
+      border: 0.5px solid black;
+      padding: 3px;
+      font-size:12px;
+  }
+  td{
+      padding: 3px;
+      font-size: 12px;
+  }
+  input{
+      padding: 3px;
+      width: auto;
+      height: auto;
+  }
+  input[type = 'submit'] {
+      display: block;
+      margin: 0 auto;
+      font-size: 12px;
+      font-weight: bold;
+  }
+  select{
+      font-size: 12px;
+      width: auto;
+      height: 150px;
+  }
+  label{
+      font-weight: bold;
+  }
+</style>
+
+<h4><center>Update Customer</center></h4>
+<p style="color: green;"><center style="color: green;">{{mes}}</center></p>
+<form method="POST" action=''>
+  <table>
+      <tr>
+          <td><label for="custid">Customer SSN ID</label>
+          <td>{{result[0][0]}}</td>
+      </tr>  
+      <tr>
+          <td><label for="tr_amt">Customer ID</label></td>
+          <td>{{result[0][6]}}</td>
+      </tr>  
+  <tr>
+          <td><label for="tr_amt">Old Customer Name</label></td>
+          <td>{{result[0][1]}}</td>
+      </tr>
+  <tr>
+          <td><label for="tr_amt">New Customer Name</label></td>
+          <td><input type="text"  name="new_name"></td>
+      </tr>
+  <tr>
+          <td><label for="tr_amt">Old Address</label></td>
+          <td>{{result[0][3]}}</td>
+      </tr>
+  <tr>
+          <td><label for="tr_amt">New Adress</label></td>
+          <td><input type="text" name="new_adr" ></td>
+      </tr>
+  <tr>
+          <td><label for="tr_amt">Old Age</label></td>
+          <td>{{result[0][2]}}</td>
+      </tr>
+  <tr>
+          <td><label for="tr_amt">New Age</label></td>
+          <td><input type="number"  name="new_age"></td>
+      </tr>
+      </table>
+    <br>
+  <input type="submit" value="Update">
+</form>
+</div>
+{% include 'footertemplate.html' %}

@@ -1,0 +1,78 @@
+{% include 'headertemplate.html' %}
+<style>
+    body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+  table, tr{
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      padding: 3.5px;
+      font-size: 13px;
+  }
+  td{
+      padding: 3.5px;
+      font-size: 13px;
+  }
+  input{
+      padding: 3.5px;
+      width: auto;
+      height: auto;
+  }
+  input[type = 'submit'] {
+      display: block;
+      margin: 0 auto;
+      font-size: 13px;
+      font-weight: bold;
+  }
+  select{
+      font-size: 16px;
+      width: auto;
+      height: auto;
+  }
+  label{
+      font-weight: bold;
+  }
+</style>
+<div class="main">
+    <h3><center>Create Customer Screen</center></h3>
+<center>
+<h3 style="color: green;">{{mes}}</h3>
+<form method="POST" action=''>
+  <table>
+      <tr>
+          <td><label for="custid">Customer SSN:</label>
+          <td><input type="text" name="ssn" value="{{new_ssnid}}"/></td>
+      </tr>
+  <tr>
+          <td><label for="custid">Customer ID:</label>
+          <td><input type="text" name="custid" value="{{new_customerid}}"/></td>
+      </tr>
+      <tr>
+          <td><label for="custid">Name:</label>
+          <td><input type="text" name="name"  placeholder="Enter name:" required/></td>
+      </tr>
+  <tr>
+          <td><label for="custid">Age:</label>
+          <td><input type="number" name="age"  placeholder="Enter age:" required/></td>
+      </tr>
+  <tr>
+          <td><label for="custid">Address:</label>
+          <td><input type="text" name="adr"  placeholder="Enter address:" required/></td>
+      </tr>
+  <tr>
+          <td><label for="custid">State:</label>
+          <td><input type="text" name="state"  placeholder="Enter state" required/></td>
+      </tr>
+  <tr>
+          <td><label for="custid">City:</label>
+          <td><input type="text" name="city"  placeholder="Enter city" required/></td>
+      </tr>
+      </table>
+  <br>
+  <input type="submit" value="Create Account">
+</form>
+</center>
+</div>
+{% include 'footertemplate.html' %}

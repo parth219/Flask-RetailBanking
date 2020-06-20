@@ -1,0 +1,56 @@
+{% include 'headertemplate.html' %}
+
+<div class="main">
+  
+    <style>
+        body{
+          background: url('../static/image1.jpg') no-repeat;
+          background-size: cover;
+        }
+        table, tr{
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 13px;
+        }
+        td{
+            padding: 10px;
+            font-size: 13px;
+        }
+        input{
+            padding: 10px;
+            width: 300px;
+            height: 40px;
+        }
+        input[type = 'submit'] {
+            display: block;
+            margin: 0 auto;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        select{
+            font-size: 13px;
+            width: 300px;
+            height: 40px;
+        }
+        label{
+            font-weight: bold;
+        }
+    </style>
+    
+    <h3><center>Search Account for statement</center></h3>
+    <br>
+    <form method="POST" action=''>
+        <table>  
+            <tr>
+                <td><label for="actid">Enter Account ID:</label></td>
+                <td><input type="text" name="actid"  placeholder="Enter account id" required/></td>
+            </tr>    
+            </table>
+        <br>
+        <input type="submit" value="statement">
+    </form>
+    </div>
+    
+{% include 'footertemplate.html' %}

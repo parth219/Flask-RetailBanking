@@ -1,0 +1,58 @@
+{% include 'headertemplate.html' %}
+<style>
+  body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 110%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:yellow;
+    color: black;
+  }
+  </style>
+<div class="main">
+  <h3><center>Account Status</center></h3>
+  <table id=customers>
+    <tr>
+      <th>Customer Id</th>
+      <th>Account ID</th>
+      <th>Account Type</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th>lastupdated</th>
+      <th>Operation</th>
+      <th>View Profile</th>
+    </tr>
+    <h3><center style="color: red;">{{mes}}</center></h3>
+    {% for user in userdetails %}
+    <tr>
+        <td>{{user[0]}}</td>
+        <td>{{user[1]}}</td>
+        <td>{{user[2]}}</td>
+        <td>{{user[3]}}</td>
+        <td>{{user[4]}}</td>
+        <td>{{user[5]}}</td>
+        <td><a  href="/accountstatus">Refresh</a></td>
+        <td><a  href="#">View Details</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% include 'footertemplate.html' %}

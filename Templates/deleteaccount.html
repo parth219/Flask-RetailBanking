@@ -1,0 +1,66 @@
+{% include 'headertemplate.html' %}
+<div class="main">
+    <style>
+        body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+        table, tr{
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            padding:5px;
+            font-size:13px;
+        }
+        td{
+            padding:5px;
+            font-size:13px;
+        }
+        input{
+            padding:5px;
+            width: 300px;
+            height: 40px;
+        }
+        input[type = 'submit'] {
+            display: block;
+            margin: 0 auto;
+            font-size:13px;
+            font-weight: bold;
+        }
+        select{
+            font-size:13px;
+            width: 300px;
+            height: 40px;
+        }
+        label{
+            font-weight: bold;
+        }
+    </style>
+    <center>
+    <h3>Delete Account</h3>
+    <p style="color: green;">{{mes}}</p>
+    <br>
+    <form method="POST" action=''>
+        <table>
+            <tr>
+                <td><label for="custid"> Enter Account ID:</label>
+                <td><input type="text" name="accid" pattern="[0-9]{9}" placeholder=" Account ID" required/></td>
+            </tr>
+            <tr>
+                <td><label for="src_type">Account Type:</label></td>
+                <td>
+                    <select name="acctype">
+                        <option value="savings">Savings</option>
+                        <option value="current">Current</option>
+                    </select>
+                </td>
+            </tr>  
+            
+            </table>
+        <br>
+        <br>
+        <input type="submit" value="Delete Account">
+    </form>
+</center>
+</div>
+{% include 'footertemplate.html' %}

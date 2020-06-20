@@ -1,0 +1,78 @@
+{% include 'headertemplate.html' %}
+<style>
+    body{
+        background: url('../static/image1.jpg') no-repeat;
+        background-size: cover;
+    }
+    table, tr{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+        font-size: 13px;
+    }
+    td{
+        padding: 5px;
+        font-size: 13px;
+    }
+    input{
+        padding: 5px;
+        width: 300px;
+        height: 40px;
+    }
+    input[type = 'submit'] {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    select{
+        font-size: 13px;
+        width: 300px;
+        height: 40px;
+    }
+    label{
+        font-weight: bold;
+    }
+</style>
+<div class="main">
+  <center>
+    <h3>Transfer Money</h3>
+    {% if flag==1 %}
+    <p style="color: green;">{{mes}}</p>
+    {% endif %}
+    {% if flag==0%}
+    <p style="color: red;">{{mes}}</p>
+    {% endif %}
+    <form method="POST" action=''>
+        <table>
+            <tr>
+                <td><label for="custid">Customer ID:</label>
+                <td><input type="text" name="custid" pattern="[0-9]{9}" placeholder="Enter 9 digit Customer ID" required/></td>
+            </tr>
+            <tr>
+                <td><label for="src_type">Source Account Type:</label></td>
+                <td>
+                    <select name="src_type">
+                        <option value="savings">Savings</option>
+                        <option value="current">Current</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tar_type">Target Account Type:</label></td>
+                <td>    
+                    <select name="tar_type">
+                        <option value="savings">Savings</option>
+                        <option value="current">Current</option>
+                    </select>
+                </td>    
+            </tr>
+            <tr>
+                <td><label for="tr_amt">Deposit Amount:</label></td>
+                <td><input type="number" name="tr_amt" required/></td>
+            </tr>    
+          </table>
+        <input type="submit" value="TRANSFER">
+    </form>
+    </center>
+</div>
+{% include 'footertemplate.html' %}
